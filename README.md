@@ -105,10 +105,8 @@ Messages WhatsApp	Liens avec texte prérempliwa.me
 La page est publiée comme artifact. Pour que le partenaire puisse l’ouvrir, partage-la avec « toute personne disposant du lien ».
 
 Sur ton propre hébergement
-Mets (ou le dossier éclaté) sur un hébergement statique : GitHub Pages, Netlify, Cloudflare Pages.love-date.html
-Dans le script, change la constante pour ton adresse :BASE
-js
-   const BASE = "https://ton-site.com/love-date.html";
+Mets (ou le dossier éclaté) sur un hébergement statique : GitHub Pages, Netlify ou Cloudflare Pages.
+Les liens générés reprennent automatiquement l’adresse de la page ouverte. Pour envoyer un lien utilisable, ouvre la version publiée du site et non un fichier local ou une adresse localhost.
 Si tu veux, passe de à pour des liens plus fiables sur un hébergement classique.#i…?i=…
 ⚠️ Limites
 Pas de retour automatique : la confirmation passe par WhatsApp, le partenaire doit appuyer sur « Envoyer ».
@@ -122,4 +120,3 @@ Vraie musique avec et un bouton lecture.assets/music.mp3
 Photos dans la petite carte.
 Plus de thèmes ou de langues.
 Compte à rebours jusqu’au rendez-vous.
-

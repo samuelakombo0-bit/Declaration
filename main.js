@@ -1,4 +1,4 @@
-const BASE = "https://samuelakombo0-bit.github.io/Declaration/";
+const BASE = window.location.origin + window.location.pathname;
 const $ = id => document.getElementById(id);
 const show = id => {
   document.querySelectorAll(".screen").forEach(screen => screen.classList.remove("active"));
