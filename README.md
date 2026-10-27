@@ -100,8 +100,7 @@ Messages WhatsApp	Liens avec texte prérempliwa.me
 
 Écris le numéro normalement, par exemple . Le préfixe est ajouté automatiquement. Les formats et fonctionnent aussi. Pour un autre pays, écris le numéro en format international complet, sans ni espaces.06 123 4567242+242 06 123 456700242 06 123 4567+
 
-🌐 Déploiement
-Sur Claude (actuel)
+
 
 La page est publiée comme artifact. Pour que le partenaire puisse l’ouvrir, partage-la avec « toute personne disposant du lien ».
 
@@ -123,3 +122,4 @@ Vraie musique avec et un bouton lecture.assets/music.mp3
 Photos dans la petite carte.
 Plus de thèmes ou de langues.
 Compte à rebours jusqu’au rendez-vous.
+

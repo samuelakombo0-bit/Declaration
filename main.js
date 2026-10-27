@@ -1,4 +1,4 @@
-const BASE = "https://claude.ai/artifact/XxFAHvz6LGZ1NZ3wimrD9h";
+const BASE = "https://samuelakombo0-bit.github.io/Declaration/";
 const $ = id => document.getElementById(id);
 const show = id => {
   document.querySelectorAll(".screen").forEach(screen => screen.classList.remove("active"));
