@@ -1,126 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Une petite question…</title>
-<link rel="stylesheet" href="main.css">
-</head>
-<body>
-<button class="ghost bar" id="back">← Tableau de bord</button>
-<button class="ghost mus" id="mus" aria-label="Musique">🔇</button>
-<main>
-
-  <!-- TABLEAU DE BORD (créateur) -->
-  <section id="s-dash" class="screen">
-    <div class="big">💌</div>
-    <h1>Crée ta déclaration</h1>
-    <p>Remplis les infos, choisis les options de rendez-vous, puis envoie le lien sur WhatsApp.</p>
-
-    <div class="panel">
-      <h3>👫 Vous deux</h3>
-      <div class="grid2">
-        <div><label for="cName">Ton prénom</label><input id="cName" maxlength="30" placeholder="Ton prénom"></div>
-        <div><label for="pName">Prénom de ton/ta partenaire</label><input id="pName" maxlength="30" placeholder="Son prénom"></div>
-        <div><label for="gender">Tu t’adresses à…</label><select id="gender"><option value="f">Une fille (sûre)</option><option value="m">Un garçon (sûr)</option></select></div>
-        <div><label for="msg">Petit mot perso (facultatif)</label><input id="msg" maxlength="80" placeholder="Ex. : Depuis le temps…"></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <h3>📱 WhatsApp</h3>
-      <div class="grid2">
-        <div><label for="cPhone">Ton numéro (pour recevoir sa réponse)</label><input id="cPhone" type="tel" inputmode="tel" placeholder="ex. 06 123 4567"></div>
-        <div><label for="pPhone">Son numéro (facultatif)</label><input id="pPhone" type="tel" inputmode="tel" placeholder="ex. 05 123 4567"></div>
-      </div>
-      <p class="hint">🇨🇬 Congo-Brazzaville : écris le numéro normalement (06 123 4567), le +242 est ajouté tout seul. Sans son numéro, tu choisis le contact dans WhatsApp.</p>
-    </div>
-
-    <div class="panel"><h3>🎨 Style et ambiance</h3>
-      <label>Couleurs</label><div class="chips" id="themes"></div>
-      <label for="music">Musique de fond</label>
-      <div class="add"><select id="music"><option value="0">Sans musique</option><option value="1" selected>🎹 Douce (piano)</option><option value="2">🌙 Rêveuse (nappes)</option><option value="3">🥁 Légère et rythmée</option></select><button class="ghost" id="prevMus" type="button">▶︎ Écouter</button></div>
-      <p class="hint">Musique créée par la page, libre de droits. Elle démarre au premier toucher.</p>
-    </div>
-    <div class="panel"><h3>💌 Petite carte (dans le site)</h3>
-      <label for="cardMsg">Ton message pour la carte</label>
-      <textarea id="cardMsg" maxlength="300" placeholder="Écris ce que tu ressens… Elle/il le découvrira dans une enveloppe, avant de choisir le rendez-vous."></textarea>
-      <label class="signature-label" for="cardSig">Signature</label>
-      <input id="cardSig" maxlength="30" placeholder="Ex. : Ton admirateur secret">
-    </div>
-    <div id="groups"></div>
-
-    <div id="err"></div>
-    <button class="go" id="gen">✨ Générer mon lien</button>
-
-    <div class="panel" id="linkbox">
-      <h3>🔗 Ton lien est prêt</h3>
-      <input id="linkOut" readonly>
-      <div class="acts">
-        <a class="btn wa" id="waSend" target="_blank" rel="noopener">Envoyer sur WhatsApp</a>
-        <button class="ghost" id="copy">Copier le lien</button>
-        <button class="ghost" id="test">Tester</button>
-      </div>
-      <p class="hint">Quand elle/il confirme, tu reçois un message WhatsApp avec le récapitulatif et un lien vers ta carte de confirmation.</p>
-    </div>
-  </section>
-
-  <!-- DÉCLARATION (partenaire) -->
-  <section id="s-ask" class="screen">
-    <div class="big">💌</div>
-    <h1 id="askTitle"></h1>
-    <p id="askMsg"></p>
-    <p class="ask-question">Est-ce que tu voudrais sortir avec moi ? ❤️</p>
-    <div class="row">
-      <button class="yes" id="yes">💚 Oui !</button>
-      <button class="no" id="no">❌ Non</button>
-    </div>
-    <div id="nomsg"></div>
-  </section>
-
-  <section id="s-wow" class="screen">
-    <h1>TU AS VRAIMENT DIT OUI ????? 😳❤️</h1>
-    <p id="wowtxt">&nbsp;</p>
-    <button class="go" id="start">Organisons notre premier date ❤️</button>
-  </section>
-
-  <section id="s-letter" class="screen">
-    <p id="letIntro">J’ai une petite carte pour toi… touche l’enveloppe 💌</p>
-    <button class="env" id="env" aria-label="Ouvrir l’enveloppe">💌</button>
-    <div class="letter" id="letter"><div id="ltxt"></div><div class="lsig" id="lsig"></div></div>
-    <button class="go" id="toWiz">Organisons notre premier date ❤️</button>
-  </section>
-
-  <section id="s-wiz" class="screen">
-    <div class="dots" id="dots"></div>
-    <h2 id="q"></h2>
-    <div class="opts" id="opts"></div>
-    <div id="react"></div>
-  </section>
-
-  <section id="s-card" class="screen">
-    <h2>Voilà le plan ! ✨</h2>
-    <pre class="card" id="card"></pre><br>
-    <button class="yes" id="confirm">Confirmer le rendez-vous 💚</button>
-  </section>
-
-  <section id="s-done" class="screen">
-    <div class="big">🥰</div>
-    <h1>C’est presque fini !</h1>
-    <p id="doneTxt"></p>
-    <a class="btn wa" id="waReply" target="_blank" rel="noopener">Envoyer ma réponse sur WhatsApp</a>
-  </section>
-
-  <!-- CONFIRMATION (créateur) -->
-  <section id="s-reply" class="screen">
-    <div class="big">🎉</div>
-    <h1 id="repTitle"></h1>
-    <p>Voici votre premier rendez-vous :</p>
-    <pre class="card" id="repCard"></pre><br>
-    <button class="ghost" id="newOne">Créer une autre invitation</button>
-  </section>
-</main>
-
-<script src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Crée une invitation romantique personnalisée et organise votre premier rendez-vous."
+    />
+    <meta name="theme-color" content="#0b0d2a" />
+    <title>Une petite question…</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
